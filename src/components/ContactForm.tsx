@@ -68,7 +68,7 @@ function ContactForm() {
         <textarea
           id="message"
           name="message"
-          rows="6"
+          rows={6}
           placeholder="What do you have to say?"
           required
         />

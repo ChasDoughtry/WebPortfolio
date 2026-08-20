@@ -1,20 +1,30 @@
 import "../styles/ProjectTile.css";
 
-function ProjectTile({ title, description, skills = []  }) {
+interface ProjectTileProps {
+  title: string;
+  description: string;
+  skills?: string[];
+}
+
+function ProjectTile({
+  title,
+  description,
+  skills = [],
+}: ProjectTileProps) {
   return (
     <article className="project-tile">
       <h3>{title}</h3>
+
       <p>{description}</p>
 
       <div className="project-skills">
-        {skills.map((skill, index) => (
-           <span className="skill-tag" key={index}>
-             {skill}
-           </span>
+        {skills.map((skill) => (
+          <span key={skill} className="skill-tag">
+            {skill}
+          </span>
         ))}
       </div>
     </article>
   );
 }
-
 export default ProjectTile;

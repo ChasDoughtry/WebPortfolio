@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import "../styles/ProjectCard.css";
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image?: string;
+  github?: string;
+  children?: ReactNode;
+}
 
 function ProjectCard({
   title,
   description,
   image,
-  github,
   children,
-}) {
+}: ProjectCardProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <article className="project-card">
-        <div className="project-image">
-          <img src={image} alt={title} />
-        </div>
+        {image && (
+          <div className="project-image">
+            <img src={image} alt={title} />
+          </div>
+        )}
 
         <div className="project-content">
           <h3>{title}</h3>
@@ -23,8 +32,6 @@ function ProjectCard({
           <p>{description}</p>
 
           <div className="project-actions">
-
-
             <button onClick={() => setOpen(true)}>
               Learn More
             </button>

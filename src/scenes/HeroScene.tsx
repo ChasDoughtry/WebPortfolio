@@ -1,27 +1,12 @@
 import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
 import { randFloat } from "three/src/math/MathUtils.js";
+import * as THREE from "three";
+
 import "../styles/Hero.css";
 
-function SpinningCube() {
-  const cubeRef = useRef<any>(null);
-
-  useFrame((state, delta) => {
-    cubeRef.current.rotation.x += delta * randFloat(.5,1);
-    cubeRef.current.rotation.y += delta * randFloat(.5,1);
-  });
-
-  return (
-    <mesh ref={cubeRef}>
-      <boxGeometry />
-      <meshStandardMaterial color="orange" />
-    </mesh>
-  );
-}
-
 function SpinningOctahedron() {
-  const octahedronRef = useRef(null);
+  const octahedronRef = useRef<THREE.Mesh>(null);
 
   const isDragging = useRef(false);
   const previousMouse = useRef({ x: 0, y: 0 });
@@ -37,7 +22,7 @@ function SpinningOctahedron() {
     y: randFloat(0.1, 0.5),
   });
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!octahedronRef.current) return;
 
     if (isDragging.current) {
@@ -78,7 +63,7 @@ function SpinningOctahedron() {
     }
   });
 
-  const handlePointerDown = (event) => {
+  const handlePointerDown = (event: ThreeEvent<PointerEvent>) => {
     event.stopPropagation();
 
     isDragging.current = true;
@@ -93,8 +78,9 @@ function SpinningOctahedron() {
     dragVelocity.current.y = 0;
   };
 
-  const handlePointerMove = (event) => {
+  const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
     if (!isDragging.current) return;
+    if (!octahedronRef.current) return;
 
     const deltaX =
       event.clientX - previousMouse.current.x;
@@ -139,42 +125,28 @@ function SpinningOctahedron() {
   );
 }
 
-function LaptopScratch() {
-  const laptopRef = useRef<any>(null);
+{/* spinning cube function
 
-  useFrame((state, delta) => {
-    laptopRef.current.rotation.y += delta * 0.5;
-  });
+  function SpinningCube() {
+    const cubeRef = useRef<any>(null);
 
-  return (
-    <group ref={laptopRef}>
-      {/* Base */}
-      <mesh position={[0, -0.5, 0]}>
-        <boxGeometry args={[3, 0.25, 2]} />
-        <meshStandardMaterial color="#334155" />
+    useFrame((state, delta) => {
+      cubeRef.current.rotation.x += delta * randFloat(.5,1);
+      cubeRef.current.rotation.y += delta * randFloat(.5,1);
+    });
+
+    return (
+      <mesh ref={cubeRef}>
+        <boxGeometry />
+        <meshStandardMaterial color="orange" />
       </mesh>
+    );
+  }
 
-      {/* Keyboard */}
-      <mesh position={[0, -0.34, -0.05]}>
-        <boxGeometry args={[2.6, 0.05, 1.5]} />
-        <meshStandardMaterial color="#020617" />
-      </mesh>
 
-      {/* Screen */}
-      <mesh position={[0, 1, -0.85]} rotation={[0.15, 0, 0]}>
-        <boxGeometry args={[3, 2, 0.15]} />
-        <meshStandardMaterial color="#1e293b" />
-      </mesh>
+  */}
 
-      {/* Screen display */}
-      <mesh position={[0, 1, -0.94]} rotation={[0.15, 0, 0]}>
-        <boxGeometry args={[2.7, 1.7, 0.02]} />
-        <meshStandardMaterial color="#0f172a" />
-      </mesh>
-    </group>
-  );
-}
-
+{/* Spinning Laptop function
 function Laptop() {
   const laptopRef = useRef<any>(null);
   const { scene } = useGLTF("laptop2.glb");
@@ -192,7 +164,9 @@ function Laptop() {
       scale={2}
     />
   );
-}
+  }
+
+  */}
 
 function HeroScene() {
   return (
