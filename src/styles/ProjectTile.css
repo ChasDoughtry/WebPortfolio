@@ -1,0 +1,76 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.project-tile {
+    width: 300px;
+    min-height: 180px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+}
+
+.project-tile h3 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: 1.3rem;
+}
+
+.project-tile p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Skill bubbles */
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 6px 12px;
+
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 999px;
+
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* 2 tiles per row */
+@media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+/* 1 tile per row */
+@media (max-width: 680px) {
+  .projects-grid {
+    grid-template-columns: 300px;
+  }
+}

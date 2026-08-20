@@ -52,3 +52,11 @@ img {
 main {
     padding-top: var(--navbar-height);
 }
+/* Page title */
+.heading-title {
+  padding-left: 75px;
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #f8fafc;
+}

@@ -9,16 +9,16 @@ function Hero() {
         <p className="hero-tag">Software Engineer</p>
 
         <h1>
-          Hi, I'm <span>Chas</span>
+          Chas <span>Doughtry</span>
         </h1>
 
         <p className="hero-description">
           Building web applications, networking solutions, and interactive
-          experiences with React, Java, Rust, and modern cloud technologies.
+          experiences with React, Java, Rust, C#, and modern cloud technologies.
         </p>
 
         <div className="hero-buttons">
-          <Link to="/projects" className="primary-btn">
+          <Link to="/Experience" className="primary-btn">
             View Projects
           </Link>
 

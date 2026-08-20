@@ -1,0 +1,81 @@
+/* Careers Page */
+.careers {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Page title */
+.careers-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #f8fafc;
+}
+
+/* Individual experience entry */
+.career-item {
+  position: relative;
+  padding: 0 0 50px 35px;
+  border-left: 2px solid #334155;
+}
+
+.career-item:last-child {
+  border-left: none;
+}
+
+/* Timeline dot */
+.career-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #38bdf8;
+  border: 2px solid #020617;
+}
+
+/* Job title */
+.career-item h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: #f8fafc;
+}
+
+/* Company / job description */
+.career-item h3 {
+  margin: 0 0 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+/* Job details */
+.career-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .careers {
+    padding: 60px 20px;
+  }
+
+  .careers-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .career-item {
+    padding-left: 25px;
+  }
+
+  .career-item h2 {
+    font-size: 1.3rem;
+  }
+}
