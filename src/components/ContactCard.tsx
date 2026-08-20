@@ -7,7 +7,7 @@ function ContactCard() {
       <h3>chasdoughtry@gmail.com</h3>
 
 
-      <h3 className="subheading">Based IN</h3>
+      <h3 className="subheading">BASED IN</h3>
       <h3>Dallas, Texas (CST)</h3>
       <h3>Remote Friendly</h3>
 

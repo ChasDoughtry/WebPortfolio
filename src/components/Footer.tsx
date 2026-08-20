@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>© 2026 Chas Doughtry.</p>
+      <p>© 2026 Chas Doughtry. All Rights Reserved</p>
     </footer>
   );
 }

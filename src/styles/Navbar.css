@@ -1,6 +1,7 @@
 :root {
     --bg-primary: #0f172a;
     --bg-secondary: rgba(15, 23, 42, 0.75);
+    --bg-third:#141926;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --accent: #38bdf8;
@@ -100,13 +101,10 @@
     padding: 0.75rem 1.25rem;
 
     border-radius: 8px;
-
     border: 1px solid var(--accent);
-
-    color: var(--accent);
-
+    color: var(--text-primary);
+    background:  var(--bg-third);
     font-weight: 600;
-
     transition: all 0.25s ease;
 }
 
@@ -171,6 +169,25 @@
 
 .mobile-sidebar a:hover {
     color: var(--accent);
+}
+
+.mobile-resume-button {
+  width: 100%;
+  padding: 1rem 0;
+
+  background: none;
+  border: none;
+
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-family: inherit;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-resume-button:hover {
+  color: #38bdf8;
 }
 
 .overlay {

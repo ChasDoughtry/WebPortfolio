@@ -50,25 +50,31 @@ function Navbar() {
 
       {/* Sliding Sidebar */}
       <div className={`mobile-sidebar ${menuOpen ? "open" : ""}`}>
-        <a href="#projects" onClick={() => setMenuOpen(false)}>
-          Projects
-        </a>
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          Home
+        </ Link>
 
-        <a href="#experience" onClick={() => setMenuOpen(false)}>
+        <Link to="/Experience" onClick={() => setMenuOpen(false)}>
           Experience
-        </a>
+        </ Link>
 
-        <a href="#about" onClick={() => setMenuOpen(false)}>
+        <Link to="/About" onClick={() => setMenuOpen(false)}>
           About
-        </a>
+        </Link>
 
-        <a href="#contact" onClick={() => setMenuOpen(false)}>
+        <Link to="/Contact" onClick={() => setMenuOpen(false)}>
           Contact
-        </a>
+        </Link>
 
-        <a href="/resume.pdf" onClick={() => setMenuOpen(false)}>
+        <button
+            className="mobile-resume-button"
+            onClick={() => {
+              setMenuOpen(false);
+              setShowResume(true);
+            }}
+        >
           Resume
-        </a>
+        </button>
       </div>
     </>
   );

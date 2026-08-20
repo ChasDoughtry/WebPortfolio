@@ -60,3 +60,24 @@ main {
   margin-bottom: 60px;
   color: #f8fafc;
 }
+
+footer {
+  width: 100%;
+  padding: 2rem 1.5rem;
+
+  box-sizing: border-box;
+
+  background: #020617;
+  border-top: 1px solid #1e293b;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+
+  padding-top: 5px
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
